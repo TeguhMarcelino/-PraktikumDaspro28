@@ -5,13 +5,15 @@ public class StudiKasus228 {
         String namaMahasiswa;
         String jenisKegiatan;
         int Jumlahdokumen;
+        int Dokumenkurang;
         int peringkatJuara;
         int statusPendanaan;
-        String DanaPendanaan;
+        String Dokumen = "";
+        String DanaPenghargaan;
 
         System.out.print("Nama mahasiswa : ");
         namaMahasiswa = sc.nextLine();
-        System.out.print("Jenis kegiatan (BELMAWA/BAKORMA/Mandiri/PKM/LAINNYA) : ");
+        System.out.print("Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA) : ");
         jenisKegiatan = sc.nextLine();
         System.out.print("Jumlah dokumen : ");
         Jumlahdokumen = sc.nextInt();
@@ -19,27 +21,36 @@ public class StudiKasus228 {
         peringkatJuara = sc.nextInt();
 
         statusPendanaan = 0;
-        if (jenisKegiatan.equalsIgnoreCase("belmawa") || jenisKegiatan.equalsIgnoreCase("Belmawa")) {
-            if (Jumlahdokumen >= 3 && peringkatJuara <= 3) {
-                statusPendanaan = 1;
+        DanaPenghargaan = "";
+        if (jenisKegiatan.equalsIgnoreCase("BAKORMA") || jenisKegiatan.equalsIgnoreCase("BELMAWA") || jenisKegiatan.equalsIgnoreCase("MANDIRI")) {
+            if (Jumlahdokumen >= 4) {
+                if ( peringkatJuara <= 3 && peringkatJuara > 0) {
+                    DanaPenghargaan = "Dana Penghargaan diberikan";
+                } else {
+                    DanaPenghargaan = "Dana Penghargaan tidak diberikan";
+                }
             } else {
-                statusPendanaan = 0;
+                Dokumen = "Dokumen tidak lengkap (kurang " + (4 - Jumlahdokumen) + " dokumen)";
+                DanaPenghargaan = "Dana Penghargaan tidak diberikan";
             }
-        } else if (jenisKegiatan.equalsIgnoreCase("bakorma") || jenisKegiatan.equalsIgnoreCase("Bakorma")) {
-            if (Jumlahdokumen >= 2 && peringkatJuara <= 3) {
-                statusPendanaan = 1;
+        } else if (jenisKegiatan.equalsIgnoreCase("PKM")) {
+            if (statusPendanaan == 1) {
+                if ( peringkatJuara <= 3 && peringkatJuara > 0) {
+                    DanaPenghargaan = "Dana Penghargaan diberikan";
+                } else {
+                    DanaPenghargaan = "Dana Penghargaan tidak diberikan";
+                }
             } else {
-                statusPendanaan = 0;
+                Dokumen = "Dokumen tidak lengkap (kurang " + (4 - Jumlahdokumen) +" dokumen)";
+                DanaPenghargaan = "Dana Penghargaan tidak diberikan";
             }
-        } else if (jenisKegiatan.equalsIgnoreCase("mandiri") || jenisKegiatan.equalsIgnoreCase("Mandiri")) {
-            if (Jumlahdokumen >= 1 && peringkatJuara <= 3) {
-                statusPendanaan = 1;
-            } else {
-                statusPendanaan = 0;
-            }
-        } else {
+        } else if (jenisKegiatan.equalsIgnoreCase("lainnya") || jenisKegiatan.equalsIgnoreCase("Lainnya")) {
+            DanaPenghargaan = "Dana Penghargaan tidak diberikan";
+            Dokumen = "Jenis kegiatan tidak valid";
+        }
+        else {
             System.out.println("Jenis kegiatan tidak valid.");
         }
-
+        System.out.println("Status : " + Dokumen + ", " + DanaPenghargaan + ".");
     }
 }
