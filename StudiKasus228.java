@@ -33,7 +33,30 @@ public class StudiKasus228 {
                 Dokumen = "Dokumen tidak lengkap (kurang " + (4 - Jumlahdokumen) + " dokumen)";
                 DanaPenghargaan = "Dana Penghargaan tidak diberikan";
             }
-        } else if (jenisKegiatan.equalsIgnoreCase("PKM")) {
+        } else if (jenisKegiatan.equalsIgnoreCase("bakorma") || jenisKegiatan.equalsIgnoreCase("Bakorma")) {
+            if (Jumlahdokumen >= 4) {
+                if ( peringkatJuara <= 3 && peringkatJuara > 0) {
+                    DanaPenghargaan = "Dana Penghargaan diberikan";
+                } else {
+                    DanaPenghargaan = "Dana Penghargaan tidak diberikan";
+                    
+                }
+            } else {
+                Dokumen = "Dokumen tidak lengkap (kurang " + (4 - Jumlahdokumen) + " dokumen)";
+                DanaPenghargaan = "Dana Penghargaan tidak diberikan";
+            }
+        } else if (jenisKegiatan.equalsIgnoreCase("mandiri") || jenisKegiatan.equalsIgnoreCase("Mandiri")) {
+            if (Jumlahdokumen >= 4) {
+                if ( peringkatJuara <= 3 && peringkatJuara > 0) {
+                    DanaPenghargaan = "Dana Penghargaan diberikan";
+                } else {
+                    DanaPenghargaan = "Dana Penghargaan tidak diberikan";
+                }
+            }    else {
+                 Dokumen = "Dokumen tidak lengkap (kurang " + (4 - Jumlahdokumen) +" dokumen)";
+                DanaPenghargaan = "Dana Penghargaan tidak diberikan";
+            }
+        } else if (jenisKegiatan.equalsIgnoreCase("pkm") || jenisKegiatan.equalsIgnoreCase("Pkm")) {
             if (statusPendanaan == 1) {
                 if ( peringkatJuara <= 3 && peringkatJuara > 0) {
                     DanaPenghargaan = "Dana Penghargaan diberikan";
