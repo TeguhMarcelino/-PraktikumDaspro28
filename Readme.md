@@ -9,3 +9,4 @@ Hasil Uji Studi Kasus 2 oleh Yefta
 |    |       |         |            |BERHAK  |         |
 |4   |LAINNYA|4        |TIDAK       |TIDAK   |YA       |
 |    |       |         |DITANYA     |BERHAK  |         |
+
