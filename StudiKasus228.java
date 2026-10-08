@@ -46,7 +46,6 @@ public class StudiKasus228 {
             }
         } else if (jenisKegiatan.equalsIgnoreCase("lainnya") || jenisKegiatan.equalsIgnoreCase("Lainnya")) {
             DanaPenghargaan = "Dana Penghargaan tidak diberikan";
-            Dokumen = "Jenis kegiatan tidak valid";
         }
         else {
             System.out.println("Jenis kegiatan tidak valid.");
